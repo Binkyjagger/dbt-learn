@@ -13,7 +13,7 @@ sources:
         
         description: Payments and the status of the payment.
         columns:
-          - name: PAYMENT_ID
+          - name: ID
             description: Unique identifier of the strip payment.
             tests:
             - unique
