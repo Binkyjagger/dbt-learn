@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: stripe
+    description: A clone of the stripe payments.
+    database: raw
+    tables:
+      - name: payment
+        loaded_at_field: created_at
+        freshness:
+            warn_after: {count: 1, period: day}
+            error_after: {count: 1, period: day}
+        
+        description: Payments and the status of the payment.
+        columns:
+          - name: PAYMENT_ID
+            description: Unique identifier of the strip payment.
+            tests:
+            - unique
+            - not_null
+
+
